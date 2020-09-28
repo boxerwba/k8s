@@ -10,14 +10,14 @@ spec:
 #  replicas: 2   # Don't need this anymore as we are using HorizontalPodAutoscaler
   selector:
     matchLabels:
-      project: 3
+      project: third
   template:
     metadata:
       labels:
-        project: 3
+        project: third
     spec:
       containers:
-        - name : 3-web
+        - name : third-web
           image: boxerwba/k8s_lecture
           ports:
             - containerPort: 80
