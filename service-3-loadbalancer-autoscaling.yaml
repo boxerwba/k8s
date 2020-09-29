@@ -7,15 +7,15 @@ metadata:
 spec:
   selector:
     matchLabels:
-      project: xyz
+      project: third
   template:
     metadata:
       labels:
-        project: xyz   # Service will look for those PODS Labels!!!
+        project: third   # Service will look for those PODS Labels!!!
     spec:
       containers:
-        - name : xyz-web
-          image: boxerwba/k8sapp
+        - name : third-web
+          image: boxerwba/k8s_lecture
           ports:
             - containerPort: 80
         
@@ -48,10 +48,10 @@ metadata:
     name: my-autoscaling-pod-service
     labels:
         env: prod
-        owner: Dimasik
+        owner: Dima
 spec:
     selector:
-        project: xyz
+        project: third
     ports:
         - name       : app-listener
           protocol   : TCP
