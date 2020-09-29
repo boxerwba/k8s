@@ -8,15 +8,15 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      project: kgb
+      project: first
   template:
     metadata:
       labels:
-        project: kgb   # Service will look for those PODS Labels!!!
+        project: first   # Service will look for those PODS Labels!!!
     spec:
       containers:
-        - name : kgb-web
-          image: boxerwba/k8sapp
+        - name : first-web
+          image: boxerwba/k8s_lecture
           ports:
             - containerPort: 80
 
@@ -27,10 +27,10 @@ metadata:
   name: my-single-pod-service
   labels:
     env  : prod
-    owner: Dimasik
+    owner: Dima
 spec:
   selector:
-    project: kgb    # Selecting PODS with those Labels
+    project: first    # Selecting PODS with those Labels
   ports:
     - name      : app-listener
       protocol  : TCP
